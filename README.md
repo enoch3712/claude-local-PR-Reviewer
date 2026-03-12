@@ -71,6 +71,30 @@ REPO="your-org/your-repo" bash pr-watcher.sh
 
 Edit `REVIEW.md` with your project's conventions — auth patterns, naming rules, migration syntax, whatever matters to your stack. The skill reads this file automatically.
 
+#### Add language or framework specs
+
+Drop any `.md` file into `.claude/skills/review-pr/specs/` and it will be injected into every review automatically — no other configuration needed.
+
+```
+.claude/skills/review-pr/
+├── SKILL.md              # skill entry point (do not edit)
+└── specs/
+    ├── README.md         # usage guide
+    ├── typescript.md     # your TypeScript rules
+    ├── react.md          # your React rules
+    └── security.md       # your security policy
+```
+
+Examples of what to put in a spec file:
+
+```md
+## TypeScript standards
+
+- No `any` — use `unknown` and narrow with type guards
+- Explicit return types on all exported functions
+- Every Promise must be awaited or `.catch()`-ed
+```
+
 ### 4. Install the Claude Code skill
 
 Copy `.claude/` into your project root (or symlink it):
