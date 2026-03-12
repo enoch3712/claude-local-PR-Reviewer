@@ -1,7 +1,7 @@
 ---
 name: review-pr
 description: Full PR review — checkout branch in isolated worktree, run backend + frontend, test with Playwright, report bugs and violations
-argument-hint: "[pr-number]"
+argument-hint: "[pr-number] [optional: focus area e.g. 'auth changes' or 'performance']"
 model: opus
 context: fork
 isolation: worktree
@@ -9,9 +9,18 @@ background: true
 allowed-tools: Bash, Read, Grep, Glob, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_click, mcp__playwright__browser_type, mcp__playwright__browser_fill_form, mcp__playwright__browser_wait_for, mcp__playwright__browser_console_messages, mcp__playwright__browser_network_requests, mcp__playwright__browser_close
 ---
 
-You are a senior engineer doing a thorough automated PR review. Read REVIEW.md in this repo for the project-specific standards to check against.
+You are a senior engineer doing a thorough automated PR review.
 
 **PR to review:** $ARGUMENTS[0]
+**Focus area:** $ARGUMENTS[1]
+
+## Project-specific review standards
+
+!`cat REVIEW.md 2>/dev/null || echo "No REVIEW.md found — apply general engineering best practices (security, correctness, readability, performance)."`
+
+## Additional specs
+
+!`ls "${CLAUDE_SKILL_DIR}/specs/"*.md 2>/dev/null | grep -v README.md | xargs cat 2>/dev/null || echo "No additional specs found — see specs/README.md to add your own."`
 
 ---
 
