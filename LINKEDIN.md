@@ -23,11 +23,23 @@ No GitHub App. No cloud CI. No $25/review.
 
 Just your machine, your API key, and Claude Code running in the background.
 
+---
+
+Here's where it gets interesting.
+
+Think of it like torrents.
+
+Someone on a bigger Claude subscription runs PR Pilot on their machine — they're the seeder. Everyone else on the team just opens a PR into the watched repo. They don't need a subscription. They don't need to run anything. They just get the review back as a comment, like magic.
+
+One person with a Pro account can cover an entire team. Or an open source maintainer can run it on a public repo and review contributions from anyone in the world — contributors just PR in and get feedback automatically.
+
+The reviewer runs the compute. Everyone else just benefits.
+
+---
+
 The whole thing is ~100 lines of bash + a skill file.
 
 Open source 👇
 https://github.com/enoch3712/claude-local-PR-Reviewer
-
----
 
 *Built with Claude Code — skills, worktree isolation, and MCP tools.*
