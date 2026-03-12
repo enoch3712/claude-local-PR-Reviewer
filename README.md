@@ -1,8 +1,10 @@
-# Claude Code — PR Reviewer
+# PR Pilot — Claude Code PR Reviewer
 
-An automated PR reviewer that runs **locally** on your machine using Claude Code. No GitHub App. No cloud CI. No secrets in GitHub.
+> *"Reviews average $15–25"* — Anthropic's managed Code Review pricing.
 
-A cron job polls your repo every 3 minutes. When a new PR (or new commits on an open PR) appears, it spawns a Claude Code subagent in an isolated git worktree that reviews the code, runs the app, tests it with Playwright, and posts a structured comment back to the PR.
+This does the same thing. Locally. For the cost of a few API calls.
+
+A cron job watches your GitHub repo every 3 minutes. When a new PR appears, it spawns a Claude Code subagent in an isolated git worktree — reviews the code, runs the app, tests with Playwright via MCP, and posts a structured comment back to the PR. No GitHub App. No cloud CI. No per-review bill.
 
 ---
 
