@@ -7,9 +7,7 @@ A cron job polls your repo every 3 minutes. When a new PR (or new commits on an 
 ---
 
 <p align="center">
-  <img src="assets/pr_reviewer_trigger.png" width="380" alt="PR Reviewer Flow" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="assets/pr_reviewer_subagent.png" width="560" alt="Smart Routing" />
+  <img src="assets/pr_pilot_combined.png" width="900" alt="PR Pilot — how it works" />
 </p>
 
 ---
